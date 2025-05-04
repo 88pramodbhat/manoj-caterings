@@ -21,20 +21,29 @@ body {
 
 /* Header */
 header {
-  background: linear-gradient(to right, #ff512f, #dd2476);
+  background-image: url('screenshot 2025-05-04 224642.png');
+  background-size: cover;
+  background-position: center;
   color: white;
+  padding: 60px 0;
   text-align: center;
-  padding: 4rem 2rem;
+}
+
+header .container {
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text contrast */
+  padding: 20px;
+  border-radius: 10px;
+  display: inline-block;
 }
 
 header h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 48px;
+  margin: 0;
 }
 
 header p {
-  font-size: 1.2rem;
-  font-style: italic;
+  font-size: 18px;
+  margin: 10px 0 0;
 }
 
 /* Sections */
