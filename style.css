@@ -21,7 +21,7 @@ body {
 
 /* Header */
 header {
-  background-image: url('screenshot 2025-05-04 224642.png');
+  background-image:('screenshot 2025-05-04 224642.png');
   background-size: cover;
   background-position: center;
   color: white;
