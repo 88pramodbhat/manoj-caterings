@@ -21,12 +21,13 @@ body {
 
 /* Header */
 header {
-  background-image:('screenshot 2025-05-04 224642.png');
+  background-image: url('Screenshot 2025-05-04 224642.png'); /* or 'images/header-bg.png' */
   background-size: cover;
   background-position: center;
   color: white;
   padding: 60px 0;
   text-align: center;
+  min-height: 300px; /* Ensure image area is visible */
 }
 
 header .container {
