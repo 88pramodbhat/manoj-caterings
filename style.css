@@ -21,13 +21,16 @@ body {
 
 /* Header */
 header {
-  background-image: url('header-bg.png'); /* or 'images/header-bg.png' */
-  background-size: cover;
-  background-position: center;
+  background-image: url('header-bg.png');  /* your image path */
+  background-size: cover;                  /* scales image to cover entire area */
+  background-position: center;             /* centers the image */
+  background-repeat: no-repeat;            /* prevents tiling */
+  height: 350px;                            /* fix the height of the banner */
   color: white;
-  padding: 60px 0;
   text-align: center;
-  min-height: 300px; /* Ensure image area is visible */
+  display: flex;
+  align-items: center;                    /* vertically center content */
+  justify-content: center;                /* horizontally center content */
 }
 
 header .container {
