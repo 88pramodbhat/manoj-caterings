@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rating System - Bhat Caterings</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f8f9fa;
+      color: #333;
+    }
+
+    .interactive-rating {
+      text-align: center;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      max-width: 400px;
+      margin: 50px auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .interactive-rating h2 {
+      margin-bottom: 20px;
+    }
+
+    #star-container {
+      font-size: 2.5rem;
+      color: #ccc;
+      cursor: pointer;
+    }
+
+    .star {
+      transition: color 0.3s;
+      padding: 0 5px;
+    }
+
+    .star.hovered,
+    .star.selected {
+      color: #f1c40f;
+    }
+
+    #rating-output {
+      margin-top: 15px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      color: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="interactive-rating">
+    <h2>Rate Our Catering Service</h2>
+    <div class="stars" id="star-container">
+      <span class="star" data-value="1">&#9734;</span>
+      <span class="star" data-value="2">&#9734;</span>
+      <span class="star" data-value="3">&#9734;</span>
+      <span class="star" data-value="4">&#9734;</span>
+      <span class="star" data-value="5">&#9734;</span>
+    </div>
+    <p id="rating-output">Click a star to rate!</p>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const stars = document.querySelectorAll(".star");
+      const output = document.getElementById("rating-output");
+      let selectedRating = 0;
+
+      stars.forEach((star) => {
+        star.addEventListener("mouseover", () => {
+          const val = star.getAttribute("data-value");
+          highlightStars(val);
+        });
+
+        star.addEventListener("mouseout", () => {
+          highlightStars(selectedRating);
+        });
+
+        star.addEventListener("click", () => {
+          selectedRating = star.getAttribute("data-value");
+          output.textContent = `You rated us ${selectedRating} out of 5!`;
+        });
+      });
+
+      function highlightStars(rating) {
+        stars.forEach((s) => {
+          if (s.getAttribute("data-value") <= rating) {
+            s.classList.add("hovered");
+          } else {
+            s.classList.remove("hovered");
+          }
+        });
+      }
+    });
+  </script>
+
+</body>
+</html>
