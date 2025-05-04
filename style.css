@@ -1,67 +1,119 @@
-body {
-  font-family: Arial, sans-serif;
+/* Reset some defaults */
+* {
   margin: 0;
-  background-color: #fdfdfd;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Layout */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* Header */
 header {
-  background-color: #c0392b;
+  background: linear-gradient(to right, #ff512f, #dd2476);
   color: white;
-  padding: 20px;
   text-align: center;
+  padding: 4rem 2rem;
 }
 
-nav {
-  background-color: #e74c3c;
-  padding: 10px;
-  text-align: center;
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
-nav a {
-  color: white;
-  margin: 0 15px;
-  text-decoration: none;
-  font-weight: bold;
+header p {
+  font-size: 1.2rem;
+  font-style: italic;
 }
 
+/* Sections */
 .section {
-  padding: 40px;
-  text-align: center;
+  padding: 3rem 2rem;
+  background-color: white;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Menu Items */
 .menu-items {
   display: flex;
-  justify-content: center;
-  gap: 30px;
   flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .menu-item {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 20px;
-  width: 200px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-button {
-  padding: 10px 20px;
-  background-color: #e67e22;
-  border: none;
-  color: white;
-  font-size: 16px;
+  flex: 1;
+  min-width: 250px;
+  background-color: #fafafa;
+  padding: 1.5rem;
+  border: 1px solid #eee;
   border-radius: 8px;
-  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-button:hover {
-  background-color: #d35400;
+.menu-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-footer {
-  background-color: #c0392b;
-  color: white;
+.menu-item h3 {
+  margin-bottom: 0.5rem;
+  color: #ff512f;
+}
+
+/* Contact */
+.contact p a {
+  color: #dd2476;
+  text-decoration: none;
+}
+
+.contact p a:hover {
+  text-decoration: underline;
+}
+
+/* Special links */
+.special-links {
   text-align: center;
-  padding: 20px;
-  margin-top: 30px;
+}
+
+.special-links a {
+  display: inline-block;
+  margin: 0.5rem;
+  font-weight: bold;
+  color: #ff512f;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.special-links a:hover {
+  color: #dd2476;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .menu-items {
+    flex-direction: column;
+  }
 }
