@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Breakfast Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f7fa;
+            padding: 40px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        .menu-item {
+            margin-bottom: 10px;
+        }
+
+        .menu-item input {
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #0077cc;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #005fa3;
+        }
+
+        #cart {
+            margin-top: 20px;
+            padding: 15px;
+            border: 2px solid #ccc;
+            background-color: #ffffff;
+            width: 300px;
+            border-radius: 8px;
+        }
+
+        #cart ul {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>🍽️ Breakfast Menu</h2>
+    <div class="menu-item">
+        <input type="checkbox" id="idli" value="10">
+        <label for="idli">Idli - ₹10</label>
+    </div>
+    <div class="menu-item">
+        <input type="checkbox" id="buns" value="40">
+        <label for="buns">Buns - ₹40</label>
+    </div>
+    <div class="menu-item">
+        <input type="checkbox" id="uppit" value="20">
+        <label for="uppit">Uppit - ₹20</label>
+    </div>
+    <div class="menu-item">
+        <input type="checkbox" id="avalakki" value="20">
+        <label for="avalakki">Avalakki - ₹20</label>
+    </div>
+
+    <br>
+    <button onclick="addToCart()">Add to Cart</button>
+
+    <div id="cart">
+        <h3>🛒 Your Cart:</h3>
+        <ul id="cartItems"></ul>
+        <p><strong>Total: ₹<span id="total">0</span></strong></p>
+    </div>
+
+    <script>
+        function addToCart() {
+            const items = [
+                { id: "idli", name: "Idli", price: 10 },
+                { id: "buns", name: "Buns", price: 40 },
+                { id: "uppit", name: "Uppit", price: 20 },
+                { id: "avalakki", name: "Avalakki", price: 20 }
+            ];
+
+            let total = 0;
+            let cartList = "";
+            items.forEach(item => {
+                const checkbox = document.getElementById(item.id);
+                if (checkbox.checked) {
+                    total += item.price;
+                    cartList += `<li>${item.name} - ₹${item.price}</li>`;
+                }
+            });
+
+            document.getElementById("cartItems").innerHTML = cartList || "<li>No items selected.</li>";
+            document.getElementById("total").innerText = total;
+        }
+    </script>
+
+</body>
+</html>
