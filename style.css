@@ -1,4 +1,4 @@
-/* Reset some defaults */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -7,9 +7,9 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  background-color: #f9f9f9;
+  background-color: #f3f4f6;
   color: #333;
+  line-height: 1.6;
 }
 
 /* Layout */
@@ -21,48 +21,54 @@ body {
 
 /* Header */
 header {
-  background-image: url('header-bg.png');  /* your image path */
-  background-size: cover;                  /* scales image to cover entire area */
-  background-position: center;             /* centers the image */
-  background-repeat: no-repeat;            /* prevents tiling */
-  height: 350px;                            /* fix the height of the banner */
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  background-image: url('header-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 350px;
   color: white;
   text-align: center;
   display: flex;
-  align-items: center;                    /* vertically center content */
-  justify-content: center;                /* horizontally center content */
+  align-items: center;
+  justify-content: center;
 }
 
 header .container {
-  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text contrast */
-  padding: 20px;
-  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 12px;
   display: inline-block;
 }
 
 header h1 {
-  font-size: 48px;
-  margin: 0;
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
 }
 
 header p {
-  font-size: 18px;
-  margin: 10px 0 0;
+  font-size: 1.2rem;
+  color: #f8f8f8;
 }
 
 /* Sections */
 .section {
   padding: 3rem 2rem;
-  background-color: white;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  background: white;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease;
+}
+
+.section:hover {
+  transform: scale(1.01);
 }
 
 .section h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: #333;
+  color: #dd2476;
 }
 
 /* Menu Items */
@@ -75,16 +81,16 @@ header p {
 .menu-item {
   flex: 1;
   min-width: 250px;
-  background-color: #fafafa;
+  background-color: #fff5f7;
   padding: 1.5rem;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #ffdee9;
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
 
 .menu-item:hover {
-  transform: scale(1.03);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(221, 36, 118, 0.1);
 }
 
 .menu-item h3 {
@@ -92,9 +98,14 @@ header p {
   color: #ff512f;
 }
 
+.menu-item p {
+  color: #444;
+}
+
 /* Contact */
 .contact p a {
   color: #dd2476;
+  font-weight: bold;
   text-decoration: none;
 }
 
@@ -102,7 +113,7 @@ header p {
   text-decoration: underline;
 }
 
-/* Special links */
+/* Special Links */
 .special-links {
   text-align: center;
 }
@@ -110,14 +121,17 @@ header p {
 .special-links a {
   display: inline-block;
   margin: 0.5rem;
-  font-weight: bold;
-  color: #ff512f;
+  padding: 0.5rem 1rem;
+  background-color: #ff512f;
+  color: white;
+  border-radius: 6px;
   text-decoration: none;
-  transition: color 0.2s ease;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 .special-links a:hover {
-  color: #dd2476;
+  background-color: #dd2476;
 }
 
 /* Responsive */
