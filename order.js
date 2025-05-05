@@ -17,7 +17,7 @@ const totalEl = document.getElementById("total");
 let cart = [];
 
 function updateCartDisplay() {
-  cartItems.innerHTML = ""; // clear list
+  cartItems.innerHTML = "";
   let total = 0;
 
   cart.forEach(item => {
@@ -40,37 +40,37 @@ products.forEach(product => {
       <h2>${product.name}</h2>
       <p class="price">₹${product.price}</p>
       <div class="quantity-controls">
-        <button class="minus">-</button>
-        <span class="quantity">0</span>
-        <button class="plus">+</button>
+        <button class="decrease">-</button>
+        <input type="number" class="quantity-input" value="1" min="1">
+        <button class="increase">+</button>
       </div>
+      <button class="button see-options">See options</button>
       <button class="button add-to-cart">Add to Cart</button>
     </div>
   `;
   container.appendChild(productEl);
 
-  const plusButton = productEl.querySelector(".plus");
-  const minusButton = productEl.querySelector(".minus");
-  const quantityDisplay = productEl.querySelector(".quantity");
+  const quantityInput = productEl.querySelector(".quantity-input");
+  const increaseBtn = productEl.querySelector(".increase");
+  const decreaseBtn = productEl.querySelector(".decrease");
   const addToCartButton = productEl.querySelector(".add-to-cart");
 
-  let quantity = 0;
-
-  plusButton.addEventListener("click", () => {
-    quantity++;
-    quantityDisplay.textContent = quantity;
+  increaseBtn.addEventListener("click", () => {
+    quantityInput.value = parseInt(quantityInput.value) + 1;
   });
 
-  minusButton.addEventListener("click", () => {
-    if (quantity > 0) {
-      quantity--;
-      quantityDisplay.textContent = quantity;
+  decreaseBtn.addEventListener("click", () => {
+    const current = parseInt(quantityInput.value);
+    if (current > 1) {
+      quantityInput.value = current - 1;
     }
   });
 
   addToCartButton.addEventListener("click", () => {
-    if (quantity === 0) {
-      alert("Please select at least 1 plate.");
+    let quantity = parseInt(quantityInput.value);
+
+    if (!quantity || quantity <= 0) {
+      alert("Please enter a valid quantity.");
       return;
     }
 
@@ -86,9 +86,7 @@ products.forEach(product => {
       });
     }
 
-    // Reset quantity display and update cart
-    quantity = 0;
-    quantityDisplay.textContent = quantity;
     updateCartDisplay();
+    alert(`${product.name} added to cart!`);
   });
 });
