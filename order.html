@@ -2,33 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catering Website</title>
-  <link rel="stylesheet" href="order.css">
+  <title>Catering Menu</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+    .product {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 10px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .product img {
+      width: 100px;
+    }
+    .details {
+      flex-grow: 1;
+    }
+    #cart {
+      margin-top: 30px;
+      border-top: 2px solid #000;
+      padding-top: 20px;
+    }
+    .pay-btn {
+      background-color: green;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Welcome to Our Catering Service</h1>
-  </header>
 
-  <main>
-    <section id="product-list">
-      <!-- Products will be dynamically inserted here -->
-    </section>
+  <h1>Catering Menu</h1>
+  <div id="product-list"></div>
 
-    <section id="cart">
-      <h2>Your Cart</h2>
-      <ul id="cart-items">
-        <!-- Cart items will be displayed here -->
-      </ul>
-      <div id="total">
-        Total: ₹0
-      </div>
-    </section>
-  </main>
+  <div id="cart">
+    <h2>Cart</h2>
+    <ul id="cart-items"></ul>
+    <h3 id="total">Total: ₹0</h3>
+    <button id="pay-upi" class="pay-btn">Pay with UPI</button>
+  </div>
 
-
-
-  <script src="order.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
