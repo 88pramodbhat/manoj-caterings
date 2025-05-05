@@ -1,4 +1,3 @@
-
 const products = [
   { name: "Idli", price: 10, image: "caterings%20image/Screenshot%202025-05-05%20162438.png" },
   { name: "Uppit Mix", price: 30, image: "caterings%20image/Screenshot%202025-05-05%20162518.png" },
