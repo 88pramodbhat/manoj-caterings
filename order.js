@@ -32,7 +32,7 @@ const products = [
   {
     name: "CARROT HALWA",
     price: "1 kg 500",
-    image: "caterings%20image/Screenshot%202025-05-05%20162742.pn"
+    image: "caterings%20image/Screenshot%202025-05-05%20162742.png"
   },
   {
     name: "BUNS",
