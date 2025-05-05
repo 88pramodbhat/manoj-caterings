@@ -1,45 +1,60 @@
 const products = [
   {
-    name: "Idli & Dosas",
-    author: "Tarla Dalal",
-    date: "Jan 1, 2007",
-    rating: 3.5,
-    reviews: 12,
-    price: "$8.21",
-    image: "images/idli_dosa.png"
+    name: "Idli",
+    price: "10 per idli",
+    image: "caterings_image/Screenshot 2025-05-05 162438.png"
   },
   {
     name: "Uppit Mix",
-    author: "Homemade Special",
-    date: "Feb 10, 2022",
-    rating: 4.2,
-    reviews: 21,
-    price: "$4.99",
-    image: "images/uppit.png"
+    price: "30 per plate",
+    image: "caterings_image/Screenshot 2025-05-05 162518.png"
   },
   {
     name: "Avalakki (Poha)",
-    author: "Natural Grains",
-    date: "Mar 3, 2023",
-    rating: 4.5,
-    reviews: 30,
-    price: "$3.79",
-    image: "images/avalakki.png"
+    price: "30 per plate",
+    image: "images/Screenshot 2025-05-05 162544.png"
+  },
+  {
+    name: "VADA",
+    price: "15 per vada",
+    image: "images/Screenshot 2025-05-05 162458.png"
+  },
+  {
+    name: "DOSA",
+    price: "40 per dosa",
+    image: "images/Screenshot 2025-05-05 162630.png"
+  },
+  {
+    name: "JAMUN",
+    price: "10 per jamun",
+    image: "images/Screenshot 2025-05-05 162700.png"
+  },
+  {
+    name: "CARROT HALWA",
+    price: "1 kg 500",
+    image: "images/Screenshot 2025-05-05 162700.png"
+  },
+  {
+    name: "BUNS",
+    price: "20 per bun",
+    image: "images/Screenshot 2025-05-05 163045.png"
+  },
+  {
+    name: "AVALAKKI BATH",
+    price: "30 per plate",
+    image: "images/Screenshot 2025-05-05 162825.png"
   }
 ];
 
 const container = document.getElementById("product-list");
 
 products.forEach(product => {
-  const stars = "★".repeat(Math.floor(product.rating)) + "☆".repeat(5 - Math.floor(product.rating));
   const productEl = document.createElement("div");
   productEl.classList.add("product");
   productEl.innerHTML = `
     <img src="${product.image}" alt="${product.name}">
     <div class="details">
       <h2>${product.name}</h2>
-      <p>by ${product.author} | ${product.date}</p>
-      <p class="rating">${stars} (${product.reviews})</p>
       <p class="price">${product.price}</p>
       <button class="button">See options</button>
     </div>
