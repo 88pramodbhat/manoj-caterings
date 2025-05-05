@@ -37,7 +37,7 @@ const products = [
   {
     name: "BUNS",
     price: "20 per bun",
-    image: "caterings%20images/Screenshot%202025-05-05%20163045.png"
+    image: "caterings%20image/Screenshot%202025-05-05%20163045.png"
   },
   {
     name: "AVALAKKI BATH",
