@@ -39,19 +39,38 @@ products.forEach(product => {
     <div class="details">
       <h2>${product.name}</h2>
       <p class="price">₹${product.price}</p>
-      <button class="button see-options">See options</button>
+      <div class="quantity-controls">
+        <button class="minus">-</button>
+        <span class="quantity">0</span>
+        <button class="plus">+</button>
+      </div>
       <button class="button add-to-cart">Add to Cart</button>
     </div>
   `;
   container.appendChild(productEl);
 
+  const plusButton = productEl.querySelector(".plus");
+  const minusButton = productEl.querySelector(".minus");
+  const quantityDisplay = productEl.querySelector(".quantity");
   const addToCartButton = productEl.querySelector(".add-to-cart");
-  addToCartButton.addEventListener("click", () => {
-    let quantity = prompt(`How many plates of ${product.name} do you want?`);
-    quantity = parseInt(quantity);
 
-    if (!quantity || quantity <= 0) {
-      alert("Please enter a valid number.");
+  let quantity = 0;
+
+  plusButton.addEventListener("click", () => {
+    quantity++;
+    quantityDisplay.textContent = quantity;
+  });
+
+  minusButton.addEventListener("click", () => {
+    if (quantity > 0) {
+      quantity--;
+      quantityDisplay.textContent = quantity;
+    }
+  });
+
+  addToCartButton.addEventListener("click", () => {
+    if (quantity === 0) {
+      alert("Please select at least 1 plate.");
       return;
     }
 
@@ -67,6 +86,9 @@ products.forEach(product => {
       });
     }
 
+    // Reset quantity display and update cart
+    quantity = 0;
+    quantityDisplay.textContent = quantity;
     updateCartDisplay();
   });
 });
