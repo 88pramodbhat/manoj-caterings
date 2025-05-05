@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cart</title>
+</head>
+<body>
+  <h1>Cart</h1>
+  <div id="cart-details"></div>
+
+  <script>
+    // Get URL params
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get('name');
+    const price = params.get('price');
+
+    const cartDetails = document.getElementById('cart-details');
+
+    if (name && price) {
+      cartDetails.innerHTML = `
+        <h2>Item: ${name}</h2>
+        <p>Price: ₹${price}</p>
+      `;
+    } else {
+      cartDetails.textContent = "No item added.";
+    }
+  </script>
+</body>
+</html>
