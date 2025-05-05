@@ -65,3 +65,34 @@ h1 {
   cursor: pointer;
   border-radius: 4px;
 }
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-controls button {
+  padding: 5px 10px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.quantity {
+  padding: 0 10px;
+  font-size: 18px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
