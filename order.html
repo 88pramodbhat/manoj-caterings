@@ -1,16 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>South Indian Foods</title>
-  <link rel="stylesheet" href="order.css">
+  <title>Product List</title>
+  <style>
+    .product {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin: 10px;
+      display: inline-block;
+      width: 200px;
+      vertical-align: top;
+      text-align: center;
+    }
+    .details {
+      margin-top: 10px;
+    }
+    .button {
+      margin: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    #cart {
+      margin-top: 30px;
+      padding: 10px;
+      border-top: 2px solid black;
+    }
+  </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Results</h1>
-    <div id="product-list" class="product-list"></div>
+  <h1>Product List</h1>
+  <div id="product-list"></div>
+
+  <div id="cart">
+    <h2>Cart</h2>
+    <ul id="cart-items"></ul>
+    <h3 id="total">Total: ₹0</h3>
   </div>
 
-  <script src="order.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
