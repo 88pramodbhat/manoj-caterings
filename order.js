@@ -56,8 +56,15 @@ products.forEach(product => {
     <div class="details">
       <h2>${product.name}</h2>
       <p class="price">${product.price}</p>
-      <button class="button">See options</button>
+      <button class="button see-options">See options</button>
+      <button class="button add-to-cart">Add to Cart</button>
     </div>
   `;
   container.appendChild(productEl);
+
+  const addToCartButton = productEl.querySelector(".add-to-cart");
+  addToCartButton.addEventListener("click", () => {
+    console.log(`${product.name} added to cart.`);
+    // You can add further logic here, like pushing to a cart array
+  });
 });
