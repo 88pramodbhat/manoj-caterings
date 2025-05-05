@@ -15,7 +15,21 @@ const cartItems = document.getElementById("cart-items");
 const totalEl = document.getElementById("total");
 
 let cart = [];
-let total = 0;
+
+function updateCartDisplay() {
+  cartItems.innerHTML = ""; // clear list
+  let total = 0;
+
+  cart.forEach(item => {
+    const li = document.createElement("li");
+    const itemTotal = item.price * item.quantity;
+    li.textContent = `${item.name} - ₹${item.price} x ${item.quantity} = ₹${itemTotal}`;
+    cartItems.appendChild(li);
+    total += itemTotal;
+  });
+
+  totalEl.textContent = `Total: ₹${total}`;
+}
 
 products.forEach(product => {
   const productEl = document.createElement("div");
@@ -33,13 +47,26 @@ products.forEach(product => {
 
   const addToCartButton = productEl.querySelector(".add-to-cart");
   addToCartButton.addEventListener("click", () => {
-    cart.push(product);
-    total += product.price;
+    let quantity = prompt(`How many plates of ${product.name} do you want?`);
+    quantity = parseInt(quantity);
 
-    const li = document.createElement("li");
-    li.textContent = `${product.name} - ₹${product.price}`;
-    cartItems.appendChild(li);
+    if (!quantity || quantity <= 0) {
+      alert("Please enter a valid number.");
+      return;
+    }
 
-    totalEl.textContent = `Total: ₹${total}`;
+    const existingItem = cart.find(item => item.name === product.name);
+
+    if (existingItem) {
+      existingItem.quantity += quantity;
+    } else {
+      cart.push({
+        name: product.name,
+        price: product.price,
+        quantity: quantity
+      });
+    }
+
+    updateCartDisplay();
   });
 });
