@@ -2,27 +2,27 @@ const products = [
   {
     name: "Idli",
     price: "10 per idli",
-    image: "catering%20images/Screenshot%202025-05-05%20162438.png"
+    image: "catering%20image/Screenshot%202025-05-05%20162438.png"
   },
   {
     name: "Uppit Mix",
     price: "30 per plate",
-    image: "catering%20images/Screenshot%202025-05-05%20162518.png"
+    image: "catering%20image/Screenshot%202025-05-05%20162518.png"
   },
   {
     name: "Avalakki (Poha)",
     price: "30 per plate",
-    image: "catering%20images/Screenshot%202025-05-05%20162544.png"
+    image: "catering%20image/Screenshot%202025-05-05%20162544.png"
   },
   {
     name: "VADA",
     price: "15 per vada",
-    image: "catering%20images/Screenshot%202025-05-05%20162458.png"
+    image: "catering%20image/Screenshot%202025-05-05%20162458.png"
   },
   {
     name: "DOSA",
     price: "40 per dosa",
-    image: "catering%20images/Screenshot%202025-05-05%20162630.png"
+    image: "catering%20image/Screenshot%202025-05-05%20162630.png"
   },
   {
     name: "JAMUN",
@@ -32,7 +32,7 @@ const products = [
   {
     name: "CARROT HALWA",
     price: "1 kg 500",
-    image: "catering%20images/Screenshot%202025-05-05%20162700.png"
+    image: "catering%20image/Screenshot%202025-05-05%20162700.png"
   },
   {
     name: "BUNS",
@@ -42,7 +42,7 @@ const products = [
   {
     name: "AVALAKKI BATH",
     price: "30 per plate",
-    image: "catering%20images/Screenshot%202025-05-05%20162825.png"
+    image: "catering%20image/Screenshot%202025-05-05%20162825.png"
   }
 ];
 
