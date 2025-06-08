@@ -41,12 +41,14 @@
     <div class="container">
       <h2>Gallery</h2>
       <div class="slider-container">
+        <button class="slider-btn left" onclick="moveSlide(-1)">&#10094;</button>
         <div class="slider" id="slider">
-          <img src="catering photos/IMG-20250607-WA0009.jpg" alt="1">
-          <img src="catering photos/IMG-20250607-WA0010.jpg" alt="2">
-          <img src="catering photos/IMG-20250607-WA0011.jpg" alt="3">
-          <img src="catering photos/IMG-20250607-WA0012.jpg" alt="4">
+          <img src="catering photos/IMG-20250607-WA0009.jpg" alt="1" />
+          <img src="catering photos/IMG-20250607-WA0010.jpg" alt="2" />
+          <img src="catering photos/IMG-20250607-WA0011.jpg" alt="3" />
+          <img src="catering photos/IMG-20250607-WA0012.jpg" alt="4" />
         </div>
+        <button class="slider-btn right" onclick="moveSlide(1)">&#10095;</button>
       </div>
     </div>
   </section>
@@ -69,7 +71,7 @@
     <div class="container">
       <h2>Contact Us</h2>
       <p>Email: <a href="mailto:pramodbhat881@gmail.com">pramodbhat881@gmail.com</a></p>
-      <p>Phone: <a href="tel:+917338253590">+91 7338253590</a></p>
+      <p>Phone: <a href="tel:+917338253590">+91 7338253590,</a></p>
     </div>
   </section>
 
@@ -77,36 +79,6 @@
     <p>&copy; <span id="year"></span> Bhat Caterings. All rights reserved.</p>
   </footer>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Menu dynamically
-    const menu = [
-      { title: "Vegetarian Platter", desc: "Healthy and delicious options" },
-      { title: "South Indian Combo", desc: "Idli, Dosa, Vada, Sambar, and more" },
-      { title: "North Indian Thali", desc: "Roti, Paneer, Dal, Rice, and Dessert" }
-    ];
-
-    const menuContainer = document.getElementById("menu-items");
-    menu.forEach(item => {
-      menuContainer.innerHTML += `
-        <div class="menu-item">
-          <h3>${item.title}</h3>
-          <p>${item.desc}</p>
-        </div>
-      `;
-    });
-
-    // Image slider logic
-    const slider = document.getElementById('slider');
-    let currentIndex = 0;
-    const totalImages = slider.children.length;
-
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % totalImages;
-      slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }, 3000); // Change every 3 seconds
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
