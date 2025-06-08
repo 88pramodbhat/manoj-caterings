@@ -6,15 +6,23 @@
   <title>Bhat Caterings</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="gallery.css" />
+  <link rel="stylesheet" href="login.css" />
 </head>
 <body>
 
+  <!-- Navigation Bar -->
   <nav>
-    <a href="#services">Services</a>
-    <a href="#menu">Menu</a>
-    <a href="#contact">Contact</a>
+    <div class="nav-left">
+      <a href="#services">Services</a>
+      <a href="#menu">Menu</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="login.html" class="login-link">Login</a>
+    </div>
   </nav>
 
+  <!-- Header -->
   <header>
     <div class="container">
       <h1>Bhat Caterings</h1>
@@ -22,6 +30,7 @@
     </div>
   </header>
 
+  <!-- Services Section -->
   <section id="services" class="section">
     <div class="container">
       <h2>Our Services</h2>
@@ -29,6 +38,7 @@
     </div>
   </section>
 
+  <!-- Menu Section -->
   <section id="menu" class="section">
     <div class="container">
       <h2>Menu Highlights</h2>
@@ -36,7 +46,7 @@
     </div>
   </section>
 
-  <!-- 🚀 Image Slider Section -->
+  <!-- Gallery/Slider Section -->
   <section class="section">
     <div class="container">
       <h2>Gallery</h2>
@@ -46,13 +56,13 @@
           <img src="catering photos/IMG-20250607-WA0009.jpg" alt="1" />
           <img src="catering photos/IMG-20250607-WA0010.jpg" alt="2" />
           <img src="catering photos/IMG-20250607-WA0011.jpg" alt="3" />
-     
         </div>
         <button class="slider-btn right" onclick="moveSlide(1)">&#10095;</button>
       </div>
     </div>
   </section>
 
+  <!-- Special Links -->
   <section class="section special-links">
     <div class="container">
       <h4><a href="otherservices.html">View Other Services</a></h4>
@@ -67,14 +77,16 @@
     </div>
   </section>
 
+  <!-- Contact Section -->
   <section id="contact" class="section contact">
     <div class="container">
       <h2>Contact Us</h2>
       <p>Email: <a href="mailto:pramodbhat881@gmail.com">pramodbhat881@gmail.com</a></p>
-      <p>Phone: <a href="tel:+917338253590">+91 73382535900</a></p>
+      <p>Phone: <a href="tel:+917338253590">+91 7338253590</a></p>
     </div>
   </section>
 
+  <!-- JavaScript -->
   <script src="slide.js"></script>
 </body>
 </html>
