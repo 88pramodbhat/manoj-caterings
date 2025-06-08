@@ -2,20 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bhat Caterings</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="gallery.css" />
-  <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header, .section { padding: 2rem 1rem; text-align: center; }
-    .container { max-width: 1000px; margin: 0 auto; }
-    nav { background-color: #333; color: white; display: flex; justify-content: space-around; padding: 1rem; }
-    nav a { color: white; text-decoration: none; margin: 0 1rem; }
-    nav a:hover { text-decoration: underline; }
-    .menu-item { margin: 1rem 0; border-bottom: 1px solid #ccc; padding-bottom: 1rem; }
-    footer { text-align: center; padding: 1rem; background-color: #f4f4f4; }
-  </style>
 </head>
 <body>
 
@@ -46,11 +36,18 @@
     </div>
   </section>
 
-  <!-- 🖼️ Image Gallery Section -->
+  <!-- 🚀 Image Slider Section -->
   <section class="section">
     <div class="container">
-      <h2>Our Gallery</h2>
-      <div class="gallery" id="gallery"></div>
+      <h2>Gallery</h2>
+      <div class="slider-container">
+        <div class="slider" id="slider">
+          <img src="catering photos/IMG-20250607-WA0009.jpg" alt="1">
+          <img src="catering photos/IMG-20250607-WA0010.jpg" alt="2">
+          <img src="catering photos/IMG-20250607-WA0011.jpg" alt="3">
+          <img src="catering photos/IMG-20250607-WA0012.jpg" alt="4">
+        </div>
+      </div>
     </div>
   </section>
 
@@ -81,10 +78,9 @@
   </footer>
 
   <script>
-    // Set current year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Dynamic menu items
+    // Menu dynamically
     const menu = [
       { title: "Vegetarian Platter", desc: "Healthy and delicious options" },
       { title: "South Indian Combo", desc: "Idli, Dosa, Vada, Sambar, and more" },
@@ -101,22 +97,15 @@
       `;
     });
 
-    // Dynamic image gallery
-    const images = [
+    // Image slider logic
+    const slider = document.getElementById('slider');
+    let currentIndex = 0;
+    const totalImages = slider.children.length;
 
-      "catering photos/IMG-20250607-WA0010.jpg",
-      "catering photos/IMG-20250607-WA0009.jpg",
-      "catering photos/IMG-20250607-WA0011.jpg",
-      "catering photos/IMG-20250607-WA0012.jpg"
-    ];
-
-    const gallery = document.getElementById("gallery");
-    images.forEach(src => {
-      const img = document.createElement("img");
-      img.src = src;
-      img.alt = "Catering Image";
-      gallery.appendChild(img);
-    });
+    setInterval(() => {
+      currentIndex = (currentIndex + 1) % totalImages;
+      slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }, 3000); // Change every 3 seconds
   </script>
 
 </body>
