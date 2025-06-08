@@ -1,52 +1,29 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f2f5;
+nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 100vh;
-}
-
-.container {
-  background-color: #fff;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  text-align: center;
-}
-
-h2 {
-  margin-bottom: 20px;
-}
-
-input[type="text"],
-input[type="password"] {
-  width: 90%;
-  padding: 10px;
-  margin: 10px 0;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-}
-
-button {
+  background-color: #f0f0f0;
   padding: 10px 20px;
-  border: none;
+  font-family: Arial, sans-serif;
+}
+
+.nav-left a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.nav-right .login-link {
+  text-decoration: none;
   background-color: #4caf50;
   color: white;
-  border-radius: 8px;
-  cursor: pointer;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-weight: bold;
   transition: background-color 0.3s;
 }
 
-button:hover {
-  background-color: #45a049;
-}
-
-.logout-btn {
-  background-color: #f44336;
-}
-
-.logout-btn:hover {
-  background-color: #d32f2f;
+.nav-right .login-link:hover {
+  background-color: #388e3c;
 }
