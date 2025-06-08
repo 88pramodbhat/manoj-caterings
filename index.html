@@ -2,23 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bhat Caterings - Gallery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bhat Caterings</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="gallery.css" />
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header, .section { padding: 2rem 1rem; text-align: center; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    nav { background-color: #333; color: white; display: flex; justify-content: space-around; padding: 1rem; }
+    nav a { color: white; text-decoration: none; margin: 0 1rem; }
+    nav a:hover { text-decoration: underline; }
+    .menu-item { margin: 1rem 0; border-bottom: 1px solid #ccc; padding-bottom: 1rem; }
+    footer { text-align: center; padding: 1rem; background-color: #f4f4f4; }
+  </style>
 </head>
 <body>
 
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#menu">Menu</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
   <header>
-    <h1>Bhat Caterings</h1>
-    <p>Making your events tastier since 2020</p>
+    <div class="container">
+      <h1>Bhat Caterings</h1>
+      <p>Making your events tastier since 2020</p>
+    </div>
   </header>
+
+  <section id="services" class="section">
+    <div class="container">
+      <h2>Our Services</h2>
+      <p>We offer catering for weddings, birthdays, corporate events, and private parties.</p>
+    </div>
+  </section>
+
+  <section id="menu" class="section">
+    <div class="container">
+      <h2>Menu Highlights</h2>
+      <div id="menu-items"></div>
+    </div>
+  </section>
 
   <!-- 🖼️ Image Gallery Section -->
   <section class="section">
     <div class="container">
-      <h2>Our Work</h2>
+      <h2>Our Gallery</h2>
       <div class="gallery" id="gallery"></div>
+    </div>
+  </section>
+
+  <section class="section special-links">
+    <div class="container">
+      <h4><a href="otherservices.html">View Other Services</a></h4>
+      <p><a href="rating.html">Rate Us</a></p>
+    </div>
+  </section>
+
+  <section class="section special-links">
+    <div class="container">
+      <h4><a href="order.html">Breakfast</a></h4>
+      <h4><a href="lunch.html">Lunch</a></h4>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>Email: <a href="mailto:pramodbhat881@gmail.com">pramodbhat881@gmail.com</a></p>
+      <p>Phone: <a href="tel:+917338253590">+91 7338253590</a></p>
     </div>
   </section>
 
@@ -27,16 +81,34 @@
   </footer>
 
   <script>
-    // Set current year in footer
+    // Set current year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Dynamically load images
+    // Dynamic menu items
+    const menu = [
+      { title: "Vegetarian Platter", desc: "Healthy and delicious options" },
+      { title: "South Indian Combo", desc: "Idli, Dosa, Vada, Sambar, and more" },
+      { title: "North Indian Thali", desc: "Roti, Paneer, Dal, Rice, and Dessert" }
+    ];
+
+    const menuContainer = document.getElementById("menu-items");
+    menu.forEach(item => {
+      menuContainer.innerHTML += `
+        <div class="menu-item">
+          <h3>${item.title}</h3>
+          <p>${item.desc}</p>
+        </div>
+      `;
+    });
+
+    // Dynamic image gallery
     const images = [
       "catering photos/IMG-20250607-WA0009.jpg",
       "catering photos/IMG-20250607-WA0010.jpg",
       "catering photos/IMG-20250607-WA0011.jpg",
       "catering photos/IMG-20250607-WA0012.jpg"
     ];
+
     const gallery = document.getElementById("gallery");
     images.forEach(src => {
       const img = document.createElement("img");
