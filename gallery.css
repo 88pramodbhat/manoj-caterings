@@ -1,7 +1,7 @@
 .slider-container {
   overflow: hidden;
   width: 100%;
-  max-width: 500px;
+  max-width: 900px;
   margin: 0 auto;
   position: relative;
   user-select: none; /* Prevent text selection on drag */
