@@ -6,24 +6,26 @@
   <title>Bhat Caterings</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="gallery.css" />
-  <link rel="stylesheet" href="login.css" />
+  <link rel="stylesheet" href="navbar.css" />
 </head>
 <body>
 
-  <!-- Navigation Bar -->
-  <nav>
-    <div class="nav-left">
-      <a href="#services">Services</a>
-      <a href="#menu">Menu</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <div class="nav-right">
-      <a href="login.html" class="login-link">Login</a>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-left">
+        <a href="#services">Services</a>
+        <a href="#menu">Menu</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-right">
+        <a href="login.html" class="login-link">Login</a>
+      </div>
     </div>
   </nav>
 
   <!-- Header -->
-  <header>
+  <header class="header">
     <div class="container">
       <h1>Bhat Caterings</h1>
       <p>Making your events tastier since 2020</p>
@@ -42,20 +44,22 @@
   <section id="menu" class="section">
     <div class="container">
       <h2>Menu Highlights</h2>
-      <div id="menu-items"></div>
+      <div id="menu-items">
+        <!-- You can dynamically insert menu here -->
+      </div>
     </div>
   </section>
 
-  <!-- Gallery/Slider Section -->
+  <!-- Gallery Slider -->
   <section class="section">
     <div class="container">
       <h2>Gallery</h2>
       <div class="slider-container">
         <button class="slider-btn left" onclick="moveSlide(-1)">&#10094;</button>
         <div class="slider" id="slider">
-          <img src="catering photos/IMG-20250607-WA0009.jpg" alt="1" />
-          <img src="catering photos/IMG-20250607-WA0010.jpg" alt="2" />
-          <img src="catering photos/IMG-20250607-WA0011.jpg" alt="3" />
+          <img src="catering photos/IMG-20250607-WA0009.jpg" alt="Catering 1" />
+          <img src="catering photos/IMG-20250607-WA0010.jpg" alt="Catering 2" />
+          <img src="catering photos/IMG-20250607-WA0011.jpg" alt="Catering 3" />
         </div>
         <button class="slider-btn right" onclick="moveSlide(1)">&#10095;</button>
       </div>
@@ -67,11 +71,6 @@
     <div class="container">
       <h4><a href="otherservices.html">View Other Services</a></h4>
       <p><a href="rating.html">Rate Us</a></p>
-    </div>
-  </section>
-
-  <section class="section special-links">
-    <div class="container">
       <h4><a href="order.html">Breakfast</a></h4>
       <h4><a href="lunch.html">Lunch</a></h4>
     </div>
@@ -86,7 +85,7 @@
     </div>
   </section>
 
-  <!-- JavaScript -->
+  <!-- Scripts -->
   <script src="slide.js"></script>
 </body>
 </html>
