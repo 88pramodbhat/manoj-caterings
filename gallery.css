@@ -13,8 +13,8 @@
 
 ..slider img {
   width: 100%;
-  max-width: 100px;   /* Limits image width */
-  height: 100px;       /* Adjust height as needed */
+  max-width: 400px;   /* Limits image width */
+  height: 400px;       /* Adjust height as needed */
   object-fit: cover;
   flex-shrink: 0;
   border-radius: 10px;
